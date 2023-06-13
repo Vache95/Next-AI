@@ -7,7 +7,7 @@ import { usePathname,useRouter } from "next/navigation";
 
 type PromptCardProps = {
   post:any,
-  handleTagClick:any,
+  handleTagClick?:any,
   handleEdit?:any,
   handleDelete?:any
 }
