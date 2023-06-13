@@ -1,6 +1,32 @@
-const Profile:React.FC = ():JSX.Element => {
+
+import PromptCard from "./PromptCard";
+
+type ProfileProps = {
+  name:string,
+  desc:any,
+  data:any,
+  handleEdit:any,
+  handleDelete:any
+}
+const Profile:React.FC<ProfileProps> = ({name,desc,data,handleEdit,handleDelete}):JSX.Element => {
   return (
-    <div>Profile</div>
+    <section className='w-full'>
+      <h1 className='head_text text-left'>
+        <span className='blue_gradient'>{name} Profile</span>
+      </h1>
+      <p className='desc text-left'>{desc}</p>
+
+      <div className='mt-10 prompt_layout'>
+        {data.map((post:any) => (
+          <PromptCard
+            key={post._id}
+            post={post}
+            handleEdit={() => handleEdit && handleEdit(post)}
+            handleDelete={() => handleDelete && handleDelete(post)}
+          />
+        ))}
+      </div>
+    </section>
   )
 }
 
