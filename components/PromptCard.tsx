@@ -8,8 +8,8 @@ import { usePathname,useRouter } from "next/navigation";
 type PromptCardProps = {
   post:any,
   handleTagClick:any,
-  handleEdit:any,
-  handleDelete:any
+  handleEdit?:any,
+  handleDelete?:any
 }
 
 const PromptCard:React.FC<PromptCardProps> = ({ post,handleTagClick,handleEdit,handleDelete }):JSX.Element => {
