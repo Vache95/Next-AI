@@ -1,14 +1,17 @@
-
 import PromptCard from "./PromptCard";
 
 type ProfileProps = {
-  name:string,
+  name:string | null,
   desc:any,
   data:any,
-  handleEdit:any,
-  handleDelete:any
+  handleEdit?:any,
+  handleDelete?:any
 }
+
 const Profile:React.FC<ProfileProps> = ({name,desc,data,handleEdit,handleDelete}):JSX.Element => {
+
+
+
   return (
     <section className='w-full'>
       <h1 className='head_text text-left'>
